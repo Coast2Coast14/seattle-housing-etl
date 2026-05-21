@@ -39,11 +39,11 @@ x-airflow-common: &airflow-common
     AIRFLOW_VAR_SEATTLE_HOUSING_RECORD_LIMIT: "50"
     _PIP_ADDITIONAL_REQUIREMENTS: "requests>=2.31.0 pandas>=2.0.0 pyarrow>=14.0.0 boto3>=1.34.0"
   volumes:
-    - /Users/elijahwooten/Downloads/seattle_housing_etl/dags:/opt/airflow/dags
-    - /Users/elijahwooten/Downloads/seattle_housing_etl/extractor:/opt/airflow/extractor
-    - /Users/elijahwooten/Downloads/seattle_housing_etl/transformer:/opt/airflow/transformer
-    - /Users/elijahwooten/Downloads/seattle_housing_etl/loader:/opt/airflow/loader
-    - /Users/elijahwooten/Downloads/seattle_housing_etl/utils:/opt/airflow/utils
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/dags:/opt/airflow/dags
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/extractor:/opt/airflow/extractor
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/transformer:/opt/airflow/transformer
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/loader:/opt/airflow/loader
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/utils:/opt/airflow/utils
     - airflow-logs:/opt/airflow/logs
     - airflow-plugins:/opt/airflow/plugins
   depends_on:
