@@ -99,7 +99,11 @@ def compute_zip_stats(df: pd.DataFrame) -> pd.DataFrame:
     # Most common permit type per zip
     top_type = (
         df.groupby("originalzip")["permittypedesc"]
-        .agg(lambda x: x.value_counts().index[0] if len(x) > 0 else "N/A")
+        .agg(
+            lambda x: (
+                x.dropna().value_counts().index[0] if len(x.dropna()) > 0 else "N/A"
+            )
+        )
         .reset_index()
         .rename(columns={"permittypedesc": "top_type"})
     )
@@ -293,7 +297,7 @@ def build_heatmap_html(stats: pd.DataFrame, week_label: str) -> tuple[str, str]:
 
 
 def generate(
-    bucket: str,
+    bucket: str = "claude-seattle-housing-data",
     prefix: str = "seattle-housing/raw",
     region: str = "us-west-2",
     output_dir: str = "heatmap_output",
@@ -364,7 +368,7 @@ if __name__ == "__main__":
     )
 
     result = generate(
-        bucket=os.environ.get("S3_BUCKET", "your-bucket-name"),
+        bucket=os.environ.get("S3_BUCKET", "claude-seattle-housing-data"),
         prefix=os.environ.get("S3_PREFIX", "seattle-housing/raw"),
         region=os.environ.get("AWS_REGION", "us-west-2"),
     )

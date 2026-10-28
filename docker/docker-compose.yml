@@ -44,6 +44,7 @@ x-airflow-common: &airflow-common
     - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/transformer:/opt/airflow/transformer
     - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/loader:/opt/airflow/loader
     - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/utils:/opt/airflow/utils
+    - /Users/elijahwooten/Desktop/Side_Projects/seattle_housing_etl/newsletter:/opt/airflow/newsletter
     - airflow-logs:/opt/airflow/logs
     - airflow-plugins:/opt/airflow/plugins
   depends_on:

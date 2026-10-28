@@ -85,7 +85,7 @@ if __name__ == "__main__":
         "request_timeout": 30,
         # ── S3 Settings ──────────────────────────────────────────────────────
         # Set these via environment variables or replace directly.
-        "s3_bucket": os.environ.get("S3_BUCKET", "your-bucket-name"),
+        "s3_bucket": os.environ.get("S3_BUCKET", "claude-seattle-housing-data"),
         "s3_prefix": os.environ.get("S3_PREFIX", "seattle-housing/raw"),
         "aws_region": os.environ.get("AWS_REGION", "us-west-2"),
     }
